@@ -17,7 +17,7 @@
 #      Copyright(c) 2016
 #  ---------------------------------------------------------------------
 #      @Description : Script de Instalação Padrão desvio condicional
-#					  Para Ubuntu e Linux Mint com Zenity
+#                     Para Ubuntu e Linux Mint com Zenity
 #  ---------------------------------------------------------------------
 
 clear
