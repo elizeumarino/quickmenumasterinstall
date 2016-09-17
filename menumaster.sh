@@ -1,6 +1,6 @@
 #!/bin/bash
 #  ---------------------------------------------------------------------
-#      @Author:  Elizeu Assis Marino Junior
+#      @Author:  Elizeu Marino
 #
 #                Rio de Janeiro    Cel: +55 21 ###-###-###
 #                Brasil            Tel: +55 21 ####-####
