@@ -324,7 +324,7 @@ Funcao_Escolha
     		menu ;;
 
 	  	"SAIR")	clear
-      			zenity --info --title " ...::: Obrigado!!! Bye Bye!!! :::... " --width=400 --height=100 --text=" \n Mais já ta indo?\n Fica mais um pouco, Vai ter Bolo! \o/\n\n Obrigado por Utilizar o Quick Menu Install\n Thanks you for Use Quick Menu Install\n\n Tank you!\n Elizeu Marino  "
+      			zenity --info --title " ...::: Obrigado!!! Bye Bye!!! :::... " --width=400 --height=100 --text=" \n Mais já ta indo?\n Fica mais um pouco, Vai ter Bolo! \o/\n\n Obrigado por Utilizar o Quick Menu Install\n Thanks you for Use Quick Menu Install\n\n Thank you!\n Elizeu Marino  "
 			echo ;
       			echo "______________________________________________________________________"
       			echo " "
@@ -335,7 +335,7 @@ Funcao_Escolha
       			echo "       Obrigado por Utilizar o Quick Menu Install"
       			echo "       Thanks you for Use Quick Menu Install "
       			echo " "
-      			echo "       Tank you! Elizeu Marino."
+      			echo "       Thank you! Elizeu Marino."
       			echo " "
       			echo "______________________________________________________________________"
       			echo ;
