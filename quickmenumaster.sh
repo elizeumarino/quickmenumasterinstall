@@ -92,8 +92,8 @@ Funcao_Escolha
 			Funcao_Executar
 			COMANDO='sudo apt-get -y install oracle-java8-set-default'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando Oracle-Java8-set-default...... Por favor aguarde...'
 			Funcao_Executar
-      APLICS="o Java Oracle !"
-      Botao_OK
+			APLICS="o Java Oracle !"
+      			Botao_OK
 		menu ;;
 
 		"2")	clear
@@ -102,16 +102,14 @@ Funcao_Escolha
 			echo "                    Instalando Terminal Terra... "
 			echo "----------------------------------------------------------------------"
 			echo ;
-      COMANDO='sudo add-apt-repository -y ppa:atareao/atareao'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
+      			COMANDO='sudo add-apt-repository -y ppa:atareao/atareao'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
 			Funcao_Executar
 			COMANDO='sudo apt-get -y update'; TITULO=' ..:: Atualizando Repositorios ::.. '; TEXTO=' Atualizando Repositorios...... Por favor aguarde...'
 			Funcao_Executar
-      COMANDO='sudo apt-get -y install my-weather-indicator'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando Terminal Terra...... Por favor aguarde...'
-      Funcao_Executar
-      APLICS="o Terminal Terra !"
-      Botao_OK
-			#sudo add-apt-repository ppa:ozcanesen/terra-terminal;
-			#sudo apt-get update && sudo apt-get install terra;
+      			COMANDO='sudo apt-get -y install my-weather-indicator'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando Terminal Terra...... Por favor aguarde...'
+      			Funcao_Executar
+      			APLICS="o Terminal Terra !"
+      			Botao_OK
 		menu ;;
 
 		"3")	clear
@@ -120,30 +118,30 @@ Funcao_Escolha
 			echo "                    Instalando PPA Mananger... "
 			echo "----------------------------------------------------------------------"
 			echo ;
-      COMANDO='sudo add-apt-repository -y ppa:webupd8team/y-ppa-manager'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
-      Funcao_Executar
-      COMANDO='sudo apt-get -y update'; TITULO=' ..:: Atualizando Repositorios ::.. '; TEXTO=' Atualizando Repositorios...... Por favor aguarde...'
-      Funcao_Executar
-      COMANDO='sudo apt-get -y install install y-ppa-manager'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando PPA Mananger...... Por favor aguarde...'
-      Funcao_Executar
-      APLICS="o PPA Mananger !"
-      Botao_OK
-    menu ;;
+      			COMANDO='sudo add-apt-repository -y ppa:webupd8team/y-ppa-manager'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
+      			Funcao_Executar
+      			COMANDO='sudo apt-get -y update'; TITULO=' ..:: Atualizando Repositorios ::.. '; TEXTO=' Atualizando Repositorios...... Por favor aguarde...'
+      			Funcao_Executar
+      			COMANDO='sudo apt-get -y install install y-ppa-manager'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando PPA Mananger...... Por favor aguarde...'
+      			Funcao_Executar
+      			APLICS="o PPA Mananger !"
+      			Botao_OK
+    		menu ;;
 
-    "4")	clear
+    		"4")	clear
 			echo ;
 			echo "----------------------------------------------------------------------"
 			echo "                    Instalando VLC media player"
 			echo "----------------------------------------------------------------------"
 			echo ;
-      COMANDO='sudo add-apt-repository -y ppa:videolan/stable-daily'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
+      			COMANDO='sudo add-apt-repository -y ppa:videolan/stable-daily'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
 			Funcao_Executar
 			COMANDO='sudo apt-get -y update'; TITULO=' ..:: Atualizando Repositorios ::.. '; TEXTO=' Atualizando Repositorios...... Por favor aguarde...'
 			Funcao_Executar
-      COMANDO='sudo apt-get -y install vlc browser-plugin-vlc'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando VLC media player...... Por favor aguarde...'
-      Funcao_Executar
-      APLICS="o VLC media player !"
-      Botao_OK
+      			COMANDO='sudo apt-get -y install vlc browser-plugin-vlc'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando VLC media player...... Por favor aguarde...'
+      			Funcao_Executar
+      			APLICS="o VLC media player !"
+      			Botao_OK
 		menu ;;
 
 		"5")	clear
@@ -152,14 +150,14 @@ Funcao_Escolha
 			echo "                    Instalando Ubuntu Tweak... "
 			echo "----------------------------------------------------------------------"
 			echo ;
-      COMANDO='sudo add-apt-repository -y ppa:tualatrix/ppa'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
+      			COMANDO='sudo add-apt-repository -y ppa:tualatrix/ppa'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
 			Funcao_Executar
 			COMANDO='sudo apt-get -y update'; TITULO=' ..:: Atualizando Repositorios ::.. '; TEXTO=' Atualizando Repositorios...... Por favor aguarde...'
 			Funcao_Executar
-      COMANDO='sudo apt-get -y install ubuntu-tweak'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando Ubuntu Tweak........ Por favor aguarde...'
+      			COMANDO='sudo apt-get -y install ubuntu-tweak'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando Ubuntu Tweak........ Por favor aguarde...'
 			Funcao_Executar
-      APLICS="o Ubuntu Tweak !"
-      Botao_OK
+      			APLICS="o Ubuntu Tweak !"
+      			Botao_OK
 		menu ;;
 
 		"6")	clear
@@ -168,14 +166,14 @@ Funcao_Escolha
 			echo "                    Instalando Plank Dock... "
 			echo "----------------------------------------------------------------------"
 			echo ;
-      COMANDO='sudo add-apt-repository -y ppa:ricotz/docky'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
+      			COMANDO='sudo add-apt-repository -y ppa:ricotz/docky'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
 			Funcao_Executar
 			COMANDO='sudo apt-get -y update'; TITULO=' ..:: Atualizando Repositorios ::.. '; TEXTO=' Atualizando Repositorios...... Por favor aguarde...'
 			Funcao_Executar
-      COMANDO='sudo apt-get -y install --install-recommends plank'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando Plank Dock...... Por favor aguarde...'
-      Funcao_Executar
-      APLICS="a Plank Dock !"
-      Botao_OK
+			COMANDO='sudo apt-get -y install --install-recommends plank'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando Plank Dock...... Por favor aguarde...'
+			Funcao_Executar
+      			APLICS="a Plank Dock !"
+      			Botao_OK
 		menu ;;
 
 		"7")	clear
@@ -190,8 +188,8 @@ Funcao_Escolha
 			Funcao_Executar
 			COMANDO='sudo apt-get -y install --install-recommends avant-window-navigator'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando Avant Window Navigator...... Por favor aguarde...'
 			Funcao_Executar
-      APLICS="a Avant Window Navigator !"
-      Botao_OK
+      			APLICS="a Avant Window Navigator !"
+      			Botao_OK
 		menu ;;
 
 
@@ -201,14 +199,14 @@ Funcao_Escolha
 			echo "                    Instalando Libreoffice... "
 			echo "----------------------------------------------------------------------"
 			echo ;
-      COMANDO='sudo add-apt-repository -y ppa:libreoffice/ppa'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
+      			COMANDO='sudo add-apt-repository -y ppa:libreoffice/ppa'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
 			Funcao_Executar
 			COMANDO='sudo apt-get -y update'; TITULO=' ..:: Atualizando Repositorios ::.. '; TEXTO=' Atualizando Repositorios...... Por favor aguarde...'
 			Funcao_Executar
-      COMANDO='sudo apt-get -y install --install-recommends libreoffice-l10n-pt-br'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando Libreoffice...... Por favor aguarde...'
+      			COMANDO='sudo apt-get -y install --install-recommends libreoffice-l10n-pt-br'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando Libreoffice...... Por favor aguarde...'
 			Funcao_Executar
-      APLICS="o Libreoffice !"
-      Botao_OK
+      			APLICS="o Libreoffice !"
+      			Botao_OK
 		menu ;;
 
 		"9")	clear
@@ -217,131 +215,131 @@ Funcao_Escolha
 			echo "                    Instalando Grub Customize... "
 			echo "----------------------------------------------------------------------"
 			echo ;
-      COMANDO='sudo add-apt-repository -y ppa:danielrichter2007/grub-customizer'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
+      			COMANDO='sudo add-apt-repository -y ppa:danielrichter2007/grub-customizer'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
 			Funcao_Executar
 			COMANDO='sudo apt-get -y update'; TITULO=' ..:: Atualizando Repositorios ::.. '; TEXTO=' Atualizando Repositorios...... Por favor aguarde...'
 			Funcao_Executar
-      COMANDO='sudo apt-get -y install --install-recommends grub-customizer'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando Grub Customize........ Por favor aguarde...'
+      			COMANDO='sudo apt-get -y install --install-recommends grub-customizer'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando Grub Customize........ Por favor aguarde...'
 			Funcao_Executar
-      APLICS="o Grub Customize !"
-      Botao_OK
-    menu ;;
+      			APLICS="o Grub Customize !"
+      			Botao_OK
+    		menu ;;
 
-    "A")	clear
+    		"A")	clear
 			echo ;
 			echo "----------------------------------------------------------------------"
 			echo "                    Instalando Midnight Commander... "
 			echo "----------------------------------------------------------------------"
 			echo ;
-      #COMANDO='sudo add-apt-repository -y ppa:atareao/atareao'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
+      			#COMANDO='sudo add-apt-repository -y ppa:atareao/atareao'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
 			#Funcao_Executar
 			COMANDO='sudo apt-get -y update'; TITULO=' ..:: Atualizando Repositorios ::.. '; TEXTO=' Atualizando Repositorios...... Por favor aguarde...'
 			Funcao_Executar
-      COMANDO='sudo apt-get -y install mc'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando Midnight Commander...... Por favor aguarde...'
-      Funcao_Executar
-      APLICS="o Midnight Commander !"
-      Botao_OK
+      			COMANDO='sudo apt-get -y install mc'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando Midnight Commander...... Por favor aguarde...'
+      			Funcao_Executar
+      			APLICS="o Midnight Commander !"
+      			Botao_OK
 		menu ;;
 
-    "B")	clear
+    		"B")	clear
 			echo ;
 			echo "----------------------------------------------------------------------"
 			echo "          Instalando Geany Multi Editor - Develope Editor... "
 			echo "----------------------------------------------------------------------"
 			echo ;
-      echo ;
-      #COMANDO='sudo add-apt-repository -y ppa:atareao/atareao'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
-      #Funcao_Executar
-      COMANDO='sudo apt-get -y update'; TITULO=' ..:: Atualizando Repositorios ::.. '; TEXTO=' Atualizando Repositorios...... Por favor aguarde...'
-      Funcao_Executar
-      COMANDO='sudo apt-get -y install geany'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando Geany Multi Editor - Develope Editor...... Por favor aguarde...'
-      Funcao_Executar
-      APLICS="o Geany Multi Editor !"
-      Botao_OK
-    menu ;;
+      			echo ;
+      			#COMANDO='sudo add-apt-repository -y ppa:atareao/atareao'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
+      			#Funcao_Executar
+      			COMANDO='sudo apt-get -y update'; TITULO=' ..:: Atualizando Repositorios ::.. '; TEXTO=' Atualizando Repositorios...... Por favor aguarde...'
+      			Funcao_Executar
+      			COMANDO='sudo apt-get -y install geany'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando Geany Multi Editor - Develope Editor...... Por favor aguarde...'
+      			Funcao_Executar
+      			APLICS="o Geany Multi Editor !"
+      			Botao_OK
+    		menu ;;
 
-    "C")	clear
+    		"C")	clear
 			echo ;
 			echo "----------------------------------------------------------------------"
 			echo "            Instalando Bleachbit - Utilitario de limpeza... "
 			echo "----------------------------------------------------------------------"
 			echo ;
-      #COMANDO='sudo add-apt-repository -y ppa:atareao/atareao'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
-      #Funcao_Executar
+      			#COMANDO='sudo add-apt-repository -y ppa:atareao/atareao'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
+      			#Funcao_Executar
 			COMANDO='sudo apt-get -y update'; TITULO=' ..:: Atualizando Repositorios ::.. '; TEXTO=' Atualizando Repositorios...... Por favor aguarde...'
 			Funcao_Executar
 			COMANDO='sudo apt-get -y install bleachbit'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando Bleachbit...... Por favor aguarde...'
 			Funcao_Executar
-      APLICS="o Bleachbit !"
-      Botao_OK
-    menu ;;
+      			APLICS="o Bleachbit !"
+      			Botao_OK
+    		menu ;;
 
-    "D")	clear
-      echo ;
-      echo "----------------------------------------------------------------------"
-      echo "    Instalando My Wather Indicator - Só funciona no Ubuntu Unity... "
-      echo "----------------------------------------------------------------------"
-      echo ;
-      COMANDO='sudo add-apt-repository -y ppa:atareao/atareao'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
-      Funcao_Executar
-      COMANDO='sudo apt-get -y update'; TITULO=' ..:: Atualizando Repositorios ::.. '; TEXTO=' Atualizando Repositorios...... Por favor aguarde...'
-      Funcao_Executar
-      COMANDO='sudo apt-get -y install my-weather-indicator'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando My Wather Indicator...... Por favor aguarde...'
-      Funcao_Executar
-      APLICS="o My Wather Indicator !"
-      Botao_OK
+    		"D")	clear
+      			echo ;
+      			echo "----------------------------------------------------------------------"
+      			echo "    Instalando My Wather Indicator - Só funciona no Ubuntu Unity... "
+      			echo "----------------------------------------------------------------------"
+      			echo ;
+      			COMANDO='sudo add-apt-repository -y ppa:atareao/atareao'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
+      			Funcao_Executar
+      			COMANDO='sudo apt-get -y update'; TITULO=' ..:: Atualizando Repositorios ::.. '; TEXTO=' Atualizando Repositorios...... Por favor aguarde...'
+      			Funcao_Executar
+      			COMANDO='sudo apt-get -y install my-weather-indicator'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando My Wather Indicator...... Por favor aguarde...'
+      			Funcao_Executar
+      			APLICS="o My Wather Indicator !"
+      			Botao_OK
 		menu ;;
 
-    "E")	clear
-      echo ;
-      echo "----------------------------------------------------------------------"
-      echo "    Instalando Conky e Conky Manager 2... "
-      echo "----------------------------------------------------------------------"
-      echo ;
-      COMANDO='sudo add-apt-repository -y ppa:ricotz/docky'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
-      Funcao_Executar
-      COMANDO='sudo apt-get -y update'; TITULO=' ..:: Atualizando Repositorios ::.. '; TEXTO=' Atualizando Repositorios...... Por favor aguarde...'
-      Funcao_Executar
-      COMANDO='sudo apt-get -y install conky conky-manager'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando Conky e Conky Manager 2...... Por favor aguarde...'
-      Funcao_Executar
-      APLICS="o Conky e Conky Manager 2 !"
-      Botao_OK
-    menu ;;
+    		"E")	clear
+      			echo ;
+      			echo "----------------------------------------------------------------------"
+      			echo "    Instalando Conky e Conky Manager 2... "
+      			echo "----------------------------------------------------------------------"
+      			echo ;
+      			COMANDO='sudo add-apt-repository -y ppa:ricotz/docky'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
+      			Funcao_Executar
+      			COMANDO='sudo apt-get -y update'; TITULO=' ..:: Atualizando Repositorios ::.. '; TEXTO=' Atualizando Repositorios...... Por favor aguarde...'
+      			Funcao_Executar
+      			COMANDO='sudo apt-get -y install conky conky-manager'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando Conky e Conky Manager 2...... Por favor aguarde...'
+      			Funcao_Executar
+      			APLICS="o Conky e Conky Manager 2 !"
+      			Botao_OK
+    		menu ;;
 
 
-    "F")	clear
-      echo ;
-      echo "----------------------------------------------------------------------"
-      echo "    Instalando Vim 8.0 Editor de codigo... "
-      echo "----------------------------------------------------------------------"
-      echo ;
-      COMANDO='sudo add-apt-repository -y ppa:jonathonf/vim'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
-      Funcao_Executar
-      COMANDO='sudo apt-get -y update'; TITULO=' ..:: Atualizando Repositorios ::.. '; TEXTO=' Atualizando Repositorios...... Por favor aguarde...'
-      Funcao_Executar
-      COMANDO='sudo apt-get -y install vim'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando Vim 8.0 Editor de codigo...... Por favor aguarde...'
-      Funcao_Executar
-      APLICS="o Vim 8.0 Editor de codigo !"
-      Botao_OK
-    menu ;;
+    		"F")	clear
+      			echo ;
+      			echo "----------------------------------------------------------------------"
+      			echo "    Instalando Vim 8.0 Editor de codigo... "
+      			echo "----------------------------------------------------------------------"
+      			echo ;
+      			COMANDO='sudo add-apt-repository -y ppa:jonathonf/vim'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
+      			Funcao_Executar
+      			COMANDO='sudo apt-get -y update'; TITULO=' ..:: Atualizando Repositorios ::.. '; TEXTO=' Atualizando Repositorios...... Por favor aguarde...'
+      			Funcao_Executar
+      			COMANDO='sudo apt-get -y install vim'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando Vim 8.0 Editor de codigo...... Por favor aguarde...'
+      			Funcao_Executar
+      			APLICS="o Vim 8.0 Editor de codigo !"
+      			Botao_OK
+    		menu ;;
 
-	  "SAIR")	clear
-      zenity --info --title " ...::: Obrigado!!! Bye Bye!!! :::... " --width=400 --height=100 --text=" \n Mais já ta indo?\n Fica mais um pouco, Vai ter Bolo! \o/\n\n Obrigado por Utilizar o Quick Menu Install\n Thanks you for Use Quick Menu Install\n\n Tank you!\n Elizeu Marino  "
+	  	"SAIR")	clear
+      			zenity --info --title " ...::: Obrigado!!! Bye Bye!!! :::... " --width=400 --height=100 --text=" \n Mais já ta indo?\n Fica mais um pouco, Vai ter Bolo! \o/\n\n Obrigado por Utilizar o Quick Menu Install\n Thanks you for Use Quick Menu Install\n\n Tank you!\n Elizeu Marino  "
 			echo ;
-      echo "______________________________________________________________________"
-      echo " "
-      echo "       Mais já ta indo? Fica mais um pouco, "
-      echo "              Vai ter Bolo! \o/ "
-      echo "           Saindo... Bye... Tchau... :( "
-      echo " "
-      echo "       Obrigado por Utilizar o Quick Menu Install"
-      echo "       Thanks you for Use Quick Menu Install "
-      echo " "
-      echo "       Tank you! Elizeu Marino."
-      echo " "
-      echo "______________________________________________________________________"
-      echo ;
-    ;;
+      			echo "______________________________________________________________________"
+      			echo " "
+      			echo "       Mais já ta indo? Fica mais um pouco, "
+      			echo "              Vai ter Bolo! \o/ "
+      			echo "           Saindo... Bye... Tchau... :( "
+      			echo " "
+      			echo "       Obrigado por Utilizar o Quick Menu Install"
+      			echo "       Thanks you for Use Quick Menu Install "
+      			echo " "
+      			echo "       Tank you! Elizeu Marino."
+      			echo " "
+      			echo "______________________________________________________________________"
+      			echo ;
+    		;;
 
 		esac
 	} #Fim Funcao_Escolha
