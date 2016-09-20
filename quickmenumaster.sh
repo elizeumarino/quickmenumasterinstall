@@ -9,28 +9,28 @@
 #                http://br.linkedin.com/in/elizeumarino
 #                https://telegram.me/TI_Brasil
 #  ---------------------------------------------------------------------
-#
-#      @Filesource: quickmenumaster.sh
-#      @Date _____: 17.09.2016
-#      @Version __: 3.0
+#      @ProjectName: Quick Menu Master Install
+#      @Filesource : quickmenumaster.sh
+#      @Date ______: 17.09.2016
+#      @Version ___: 3.0
 #
 #      Copyright(c) 2016
 #  ---------------------------------------------------------------------
 #      @Description : Script de Instalação Padrão desvio condicional
 #                     Para Ubuntu e Linux Mint com Zenity
 #  ---------------------------------------------------------------------
-
-clear
+#Inicio Quick Menu Master Install
+clear #Inicio condicional if verica senha de admin
 if [ "`id -u`" != "0" ] ; then
 gksudo $0
 exit
-fi
+fi #Fim do condicional
 
-#Inicio Menu
-menu ()	{
-Escolha=$(zenity --list --radiolist --title="MENU MASTER" --width=600 --height=500  \
+
+menu ()	{ #Inicio Menu
+Escolha=$(zenity --list --radiolist --title="Quick Menu Master Install" --width=600 --height=500  \
 --text "Escolha uma opção ! " \
-  --column "X" --column "Opção" --column "Descrição" \
+  --column " ( X ) " --column "Opção" --column "Descrição" \
 FALSE "1" "Instalar Java Oracle"  \
 FALSE "2" "Instalar Terminal Terra" \
 FALSE "3" "Instalar PPA Mananger" \
@@ -42,44 +42,48 @@ FALSE "8" "Instalar Libreoffice" \
 FALSE "9" "Instalar Grub Customize" \
 FALSE "A" "Instalar Midnight Commander" \
 FALSE "B" "Instalar Geany Multi Editor - Develope Editor" \
-FALSE "C" "Instalar Bleachbit- Utilitario de limpeza" \
+FALSE "C" "Instalar Bleachbit - Utilitario de limpeza" \
 FALSE "D" "Instalar My Wather Indicator - Só funciona no Ubuntu Unity" \
-FALSE "E" "Instalar Conky e Conky Mananger" \
+FALSE "E" "Instalar Conky e Conky Mananger 2" \
+FALSE "F" "Instalar Vim 8.0 Editor de codigo" \
 FALSE "SAIR"
-); echo $Escolha
+);
+echo ;
+echo $Escolha
+echo ;
 Funcao_Escolha
-#Fim Menu
-}
+} #Fim Menu
 
-Funcao_Executar () {
-# EXEMPLO PARA REPOSITORIOS
-# COMANDO='sudo add-apt-repository ppa:ricotz/docky'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
+      Funcao_Executar () { #Inicio Funcao_Executar
+        # EXEMPLO PARA REPOSITORIOS
+        # COMANDO='sudo add-apt-repository -y ppa:ricotz/docky'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
+        # EXEMPLO PARA ATUALIZACAO DE REPOSITORIOS
+        # COMANDO='sudo apt-get -y update'; TITULO=' ..:: Atualizando Repositorios ::.. '; TEXTO=' Atualizando Repositorios...... Por favor aguarde...'
+        # EXEMPLO PARA INSTALACAO DE APLICATIVOS E PROGRAMAS
+        # COMANDO='sudo apt-get -y install plank'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando Plank Dock...... Por favor aguarde...'
 
-# EXEMPLO PARA ATUALIZACAO DE REPOSITORIOS
-# COMANDO='sudo apt-get -y update'; TITULO=' ..:: Atualizando Repositorios ::.. '; TEXTO=' Atualizando Repositorios...... Por favor aguarde...'
+	      Barra_Progresso () { #Inicio Barra_Progresso
+		         tail -#Fim Funcao_Executar $0 | zenity --progress --width=400 --height=100 --title "$TITULO" --pulsate --auto-close --auto-kill --text "$TEXTO"
+	      }
+        #Fim Barra_Progresso
 
-# EXEMPLO PARA INSTALACAO DE APLICATIVOS E PROGRAMAS
-# COMANDO='sudo apt-get -y install plank'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando Plank Dock...... Por favor aguarde...'
+        Barra_Progresso "Aguarde..." & sudo $COMANDO #Executa a Barra_Progresso
+        killall tail #Finaliza Barra_Progresso
+        }  #Fim Funcao_Executar
 
-	Barra_Progresso () {
-		tail -f $0 | zenity --progress --width=400 --height=100 --title "$TITULO" --pulsate --auto-close --auto-kill --text "$TEXTO"
-	}
+        Botao_OK () { #Inicio Botao_OK
+            zenity --info --width=400 --height=100 --title " ...::: OBRIGADO ! :::..." --text " Obrigado por instalar $APLICS"
+        }  #Fim Botao_OK
 
-Barra_Progresso "Aguarde..." & sudo $COMANDO
-killall tail
-zenity --info --width=400 --height=100 --title " ...::: OBRIGADO ! :::..." --text " Obrigado por usar Quick Master Menu Install"
-}
+	Funcao_Escolha ()	{ #Inicio Funcao_Escolha
+	  case $Escolha in
 
-	Funcao_Escolha ()
-	{
-	case $Escolha in
 		"1")	clear
 			echo ;
 			echo "----------------------------------------------------------------------"
 			echo "                    Instalando Java Oracle... "
 			echo "----------------------------------------------------------------------"
 			echo ;
-
 			COMANDO='sudo add-apt-repository -y ppa:webupd8team/java'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
 			Funcao_Executar
 			COMANDO='sudo apt-get -y update'; TITULO=' ..:: Atualizando Repositorios ::.. '; TEXTO=' Atualizando Repositorios...... Por favor aguarde...'
@@ -88,6 +92,8 @@ zenity --info --width=400 --height=100 --title " ...::: OBRIGADO ! :::..." --tex
 			Funcao_Executar
 			COMANDO='sudo apt-get -y install oracle-java8-set-default'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando Oracle-Java8-set-default...... Por favor aguarde...'
 			Funcao_Executar
+      APLICS="o Java Oracle !"
+      Botao_OK
 		menu ;;
 
 		"2")	clear
@@ -96,6 +102,14 @@ zenity --info --width=400 --height=100 --title " ...::: OBRIGADO ! :::..." --tex
 			echo "                    Instalando Terminal Terra... "
 			echo "----------------------------------------------------------------------"
 			echo ;
+      COMANDO='sudo add-apt-repository -y ppa:atareao/atareao'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
+			Funcao_Executar
+			COMANDO='sudo apt-get -y update'; TITULO=' ..:: Atualizando Repositorios ::.. '; TEXTO=' Atualizando Repositorios...... Por favor aguarde...'
+			Funcao_Executar
+      COMANDO='sudo apt-get -y install my-weather-indicator'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando Terminal Terra...... Por favor aguarde...'
+      Funcao_Executar
+      APLICS="o Terminal Terra !"
+      Botao_OK
 			#sudo add-apt-repository ppa:ozcanesen/terra-terminal;
 			#sudo apt-get update && sudo apt-get install terra;
 		menu ;;
@@ -106,36 +120,30 @@ zenity --info --width=400 --height=100 --title " ...::: OBRIGADO ! :::..." --tex
 			echo "                    Instalando PPA Mananger... "
 			echo "----------------------------------------------------------------------"
 			echo ;
-			# EXEMPLO PARA REPOSITORIOS
-			# COMANDO='sudo add-apt-repository ppa:ricotz/docky'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
+      COMANDO='sudo add-apt-repository -y ppa:webupd8team/y-ppa-manager'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
+      Funcao_Executar
+      COMANDO='sudo apt-get -y update'; TITULO=' ..:: Atualizando Repositorios ::.. '; TEXTO=' Atualizando Repositorios...... Por favor aguarde...'
+      Funcao_Executar
+      COMANDO='sudo apt-get -y install install y-ppa-manager'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando PPA Mananger...... Por favor aguarde...'
+      Funcao_Executar
+      APLICS="o PPA Mananger !"
+      Botao_OK
+    menu ;;
 
-			# EXEMPLO PARA ATUALIZACAO DE REPOSITORIOS
-			# COMANDO='sudo apt-get -y update'; TITULO=' ..:: Atualizando Repositorios ::.. '; TEXTO=' Atualizando Repositorios...... Por favor aguarde...'
-
-			# EXEMPLO PARA INSTALACAO DE APLICATIVOS E PROGRAMAS
-			# COMANDO='sudo apt-get -y install plank'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando Plank Dock...... Por favor aguarde...'
-
-			COMANDO='sudo add-apt-repository -y ppa:webupd8team/y-ppa-manager && sudo apt-get -y update'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
-			Funcao_Executar
-			#sudo add-apt-repository ppa:webupd8team/y-ppa-manager
-			#sudo apt-get update
-			#sudo apt-get install y-ppa-manager
-			COMANDO='sudo apt-get -y install y-ppa-manager'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando PPA-Manager... Por favor aguarde...'
-			Funcao_Executar
-		menu ;;
-
-		"4")	clear
+    "4")	clear
 			echo ;
 			echo "----------------------------------------------------------------------"
 			echo "                    Instalando VLC media player"
 			echo "----------------------------------------------------------------------"
 			echo ;
-			COMANDO='sudo add-apt-repository -y ppa:videolan/stable-daily && sudo apt-get -y update'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
+      COMANDO='sudo add-apt-repository -y ppa:videolan/stable-daily'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
 			Funcao_Executar
-			# sudo add-apt-repository ppa:videolan/stable-daily && sudo apt-get update
-			# sudo apt-get dist-upgrade && sudo apt-get install vlc browser-plugin-vlc
-			COMANDO='sudo apt-get -y dist-upgrade && sudo apt-get -y install vlc browser-plugin-vlc'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando VLC Media Player..... Por favor aguarde...'
+			COMANDO='sudo apt-get -y update'; TITULO=' ..:: Atualizando Repositorios ::.. '; TEXTO=' Atualizando Repositorios...... Por favor aguarde...'
 			Funcao_Executar
+      COMANDO='sudo apt-get -y install vlc browser-plugin-vlc'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando VLC media player...... Por favor aguarde...'
+      Funcao_Executar
+      APLICS="o VLC media player !"
+      Botao_OK
 		menu ;;
 
 		"5")	clear
@@ -144,9 +152,14 @@ zenity --info --width=400 --height=100 --title " ...::: OBRIGADO ! :::..." --tex
 			echo "                    Instalando Ubuntu Tweak... "
 			echo "----------------------------------------------------------------------"
 			echo ;
-			#sudo add-apt-repository ppa:tualatrix/ppa
-			#sudo apt-get update
-			#sudo apt-get install ubuntu-tweak
+      COMANDO='sudo add-apt-repository -y ppa:tualatrix/ppa'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
+			Funcao_Executar
+			COMANDO='sudo apt-get -y update'; TITULO=' ..:: Atualizando Repositorios ::.. '; TEXTO=' Atualizando Repositorios...... Por favor aguarde...'
+			Funcao_Executar
+      COMANDO='sudo apt-get -y install ubuntu-tweak'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando Ubuntu Tweak........ Por favor aguarde...'
+			Funcao_Executar
+      APLICS="o Ubuntu Tweak !"
+      Botao_OK
 		menu ;;
 
 		"6")	clear
@@ -155,9 +168,14 @@ zenity --info --width=400 --height=100 --title " ...::: OBRIGADO ! :::..." --tex
 			echo "                    Instalando Plank Dock... "
 			echo "----------------------------------------------------------------------"
 			echo ;
-			sudo add-apt-repository ppa:ricotz/docky | zenity --progress --title " ..:: Instalando Repositorio ::.. " --pulsate --auto-close --text " Acidionando Repositorio...... Por favor aguarde..."
-			sudo apt-get update | zenity --progress --title " ..:: Atualizando Repositorios ::.. "  --auto-close --text " Atualizando Repositorios...... Por favor aguarde..."
-			sudo apt-get install plank | zenity --progress --title " ..:: Instalando ::.. " --pulsate --auto-close --auto-kill --text " Instalando Plank Dock...... Por favor aguarde..."
+      COMANDO='sudo add-apt-repository -y ppa:ricotz/docky'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
+			Funcao_Executar
+			COMANDO='sudo apt-get -y update'; TITULO=' ..:: Atualizando Repositorios ::.. '; TEXTO=' Atualizando Repositorios...... Por favor aguarde...'
+			Funcao_Executar
+      COMANDO='sudo apt-get -y install --install-recommends plank'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando Plank Dock...... Por favor aguarde...'
+      Funcao_Executar
+      APLICS="a Plank Dock !"
+      Botao_OK
 		menu ;;
 
 		"7")	clear
@@ -172,6 +190,8 @@ zenity --info --width=400 --height=100 --title " ...::: OBRIGADO ! :::..." --tex
 			Funcao_Executar
 			COMANDO='sudo apt-get -y install --install-recommends avant-window-navigator'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando Avant Window Navigator...... Por favor aguarde...'
 			Funcao_Executar
+      APLICS="a Avant Window Navigator !"
+      Botao_OK
 		menu ;;
 
 
@@ -181,9 +201,14 @@ zenity --info --width=400 --height=100 --title " ...::: OBRIGADO ! :::..." --tex
 			echo "                    Instalando Libreoffice... "
 			echo "----------------------------------------------------------------------"
 			echo ;
-			#sudo add-apt-repository ppa:libreoffice/ppa -y && sudo apt-get update
-			#sudo apt-get dist-upgrade
-			#sudo apt-get install libreoffice-l10n-pt-br
+      COMANDO='sudo add-apt-repository -y ppa:libreoffice/ppa'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
+			Funcao_Executar
+			COMANDO='sudo apt-get -y update'; TITULO=' ..:: Atualizando Repositorios ::.. '; TEXTO=' Atualizando Repositorios...... Por favor aguarde...'
+			Funcao_Executar
+      COMANDO='sudo apt-get -y install --install-recommends libreoffice-l10n-pt-br'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando Libreoffice...... Por favor aguarde...'
+			Funcao_Executar
+      APLICS="o Libreoffice !"
+      Botao_OK
 		menu ;;
 
 		"9")	clear
@@ -192,97 +217,133 @@ zenity --info --width=400 --height=100 --title " ...::: OBRIGADO ! :::..." --tex
 			echo "                    Instalando Grub Customize... "
 			echo "----------------------------------------------------------------------"
 			echo ;
-			#sudo add-apt-repository ppa:danielrichter2007/grub-customizer
-			#sudo apt-get update
-			#sudo apt-get install grub-customizer
-		menu ;;
+      COMANDO='sudo add-apt-repository -y ppa:danielrichter2007/grub-customizer'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
+			Funcao_Executar
+			COMANDO='sudo apt-get -y update'; TITULO=' ..:: Atualizando Repositorios ::.. '; TEXTO=' Atualizando Repositorios...... Por favor aguarde...'
+			Funcao_Executar
+      COMANDO='sudo apt-get -y install --install-recommends grub-customizer'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando Grub Customize........ Por favor aguarde...'
+			Funcao_Executar
+      APLICS="o Grub Customize !"
+      Botao_OK
+    menu ;;
 
-		"A")	clear
+    "A")	clear
 			echo ;
 			echo "----------------------------------------------------------------------"
 			echo "                    Instalando Midnight Commander... "
 			echo "----------------------------------------------------------------------"
 			echo ;
-			#sudo apt-get -y install mc
+      #COMANDO='sudo add-apt-repository -y ppa:atareao/atareao'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
+			#Funcao_Executar
+			COMANDO='sudo apt-get -y update'; TITULO=' ..:: Atualizando Repositorios ::.. '; TEXTO=' Atualizando Repositorios...... Por favor aguarde...'
+			Funcao_Executar
+      COMANDO='sudo apt-get -y install mc'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando Midnight Commander...... Por favor aguarde...'
+      Funcao_Executar
+      APLICS="o Midnight Commander !"
+      Botao_OK
 		menu ;;
 
-	   "B")	clear
+    "B")	clear
 			echo ;
 			echo "----------------------------------------------------------------------"
 			echo "          Instalando Geany Multi Editor - Develope Editor... "
 			echo "----------------------------------------------------------------------"
 			echo ;
-			#sudo apt-get -y install geany*
-		menu ;;
+      echo ;
+      #COMANDO='sudo add-apt-repository -y ppa:atareao/atareao'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
+      #Funcao_Executar
+      COMANDO='sudo apt-get -y update'; TITULO=' ..:: Atualizando Repositorios ::.. '; TEXTO=' Atualizando Repositorios...... Por favor aguarde...'
+      Funcao_Executar
+      COMANDO='sudo apt-get -y install geany'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando Geany Multi Editor - Develope Editor...... Por favor aguarde...'
+      Funcao_Executar
+      APLICS="o Geany Multi Editor !"
+      Botao_OK
+    menu ;;
 
-	   "C")	clear
+    "C")	clear
 			echo ;
 			echo "----------------------------------------------------------------------"
-			echo "            Instalando Bleachbit- Utilitario de limpeza... "
+			echo "            Instalando Bleachbit - Utilitario de limpeza... "
 			echo "----------------------------------------------------------------------"
 			echo ;
-			#ENTRA=$(zenity --password --title='Identificação do Usuario')
-
-			#ENTRA=$(zenity --entry --title='Identificação do Usuario' --text='Digite a senha para instalação do aplicativo');
-			#SENHA=$(echo $ENTRA | cut -d "|" -f 2)
-
-			#sudo apt-get install bleachbit
+      #COMANDO='sudo add-apt-repository -y ppa:atareao/atareao'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
+      #Funcao_Executar
 			COMANDO='sudo apt-get -y update'; TITULO=' ..:: Atualizando Repositorios ::.. '; TEXTO=' Atualizando Repositorios...... Por favor aguarde...'
 			Funcao_Executar
-			COMANDO='sudo apt-get -y install bleachbit'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando bleachbit...... Por favor aguarde...'
+			COMANDO='sudo apt-get -y install bleachbit'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando Bleachbit...... Por favor aguarde...'
 			Funcao_Executar
+      APLICS="o Bleachbit !"
+      Botao_OK
+    menu ;;
+
+    "D")	clear
+      echo ;
+      echo "----------------------------------------------------------------------"
+      echo "    Instalando My Wather Indicator - Só funciona no Ubuntu Unity... "
+      echo "----------------------------------------------------------------------"
+      echo ;
+      COMANDO='sudo add-apt-repository -y ppa:atareao/atareao'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
+      Funcao_Executar
+      COMANDO='sudo apt-get -y update'; TITULO=' ..:: Atualizando Repositorios ::.. '; TEXTO=' Atualizando Repositorios...... Por favor aguarde...'
+      Funcao_Executar
+      COMANDO='sudo apt-get -y install my-weather-indicator'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando My Wather Indicator...... Por favor aguarde...'
+      Funcao_Executar
+      APLICS="o My Wather Indicator !"
+      Botao_OK
 		menu ;;
 
-	   "D")	clear
+    "E")	clear
+      echo ;
+      echo "----------------------------------------------------------------------"
+      echo "    Instalando Conky e Conky Manager 2... "
+      echo "----------------------------------------------------------------------"
+      echo ;
+      COMANDO='sudo add-apt-repository -y ppa:ricotz/docky'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
+      Funcao_Executar
+      COMANDO='sudo apt-get -y update'; TITULO=' ..:: Atualizando Repositorios ::.. '; TEXTO=' Atualizando Repositorios...... Por favor aguarde...'
+      Funcao_Executar
+      COMANDO='sudo apt-get -y install conky conky-manager'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando Conky e Conky Manager 2...... Por favor aguarde...'
+      Funcao_Executar
+      APLICS="o Conky e Conky Manager 2 !"
+      Botao_OK
+    menu ;;
+
+
+    "F")	clear
+      echo ;
+      echo "----------------------------------------------------------------------"
+      echo "    Instalando Vim 8.0 Editor de codigo... "
+      echo "----------------------------------------------------------------------"
+      echo ;
+      COMANDO='sudo add-apt-repository -y ppa:jonathonf/vim'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
+      Funcao_Executar
+      COMANDO='sudo apt-get -y update'; TITULO=' ..:: Atualizando Repositorios ::.. '; TEXTO=' Atualizando Repositorios...... Por favor aguarde...'
+      Funcao_Executar
+      COMANDO='sudo apt-get -y install vim'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando Vim 8.0 Editor de codigo...... Por favor aguarde...'
+      Funcao_Executar
+      APLICS="o Vim 8.0 Editor de codigo !"
+      Botao_OK
+    menu ;;
+
+	  "SAIR")	clear
+      zenity --info --title " ...::: Obrigado!!! Bye Bye!!! :::... " --width=400 --height=100 --text=" \n Mais já ta indo?\n Fica mais um pouco, Vai ter Bolo! \o/\n\n Obrigado por Utilizar o Quick Menu Install\n Thanks you for Use Quick Menu Install\n\n Tank you!\n Elizeu Marino  "
 			echo ;
-			echo "----------------------------------------------------------------------"
-			echo "    Instalando My Wather Indicator - Só funciona no Ubuntu Unity... "
-			echo "----------------------------------------------------------------------"
-			echo ;
-			# sudo add-apt-repository ppa:atareao/atareao
-			# sudo apt-get update
-			# sudo apt-get install my-weather-indicator
-		menu ;;
-
-		"E")	clear
-			echo ;
-			echo "----------------------------------------------------------------------"
-			echo "    Instalando Conky e Conky Manager 2... "
-			echo "----------------------------------------------------------------------"
-			echo ;
-			COMANDO='echo ${SENHA}\n | sudo add-apt-repository ppa:ricotz/docky'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
-			Funcao_Executar
-			COMANDO='echo ${SENHA}\n | sudo apt-get -y update'; TITULO=' ..:: Atualizando Repositorios ::.. '; TEXTO=' Atualizando Repositorios...... Por favor aguarde...'
-			Funcao_Executar
-			# sudo add-apt-repository ppa:teejee2008/ppa
-			# sudo apt-get update
-			# sudo apt-get install conky conky-manager
-		menu ;;
-
-
-
-	"SAIR")	clear
-	zenity --info --title " ...::: Obrigado!!! Bye Bye!!! :::... " --width=400 --height=100 --text=" \n Mais já ta indo?\n Fica mais um pouco, Vai ter Bolo! \o/\n\n Obrigado por Utilizar o Quick Menu Install\n Thanks you for Use Quick Menu Install\n\n Tank you!\n Elizeu Marino  "
-			echo ;
-			echo "______________________________________________________________________"
-			echo " "
-			echo "       Mais já ta indo? Fica mais um pouco, "
-			echo "              Vai ter Bolo! \o/ "
-			echo "           Saindo... Bye... Tchau... :( "
-			echo " "
-			echo "       Obrigado por Utilizar o Quick Menu Install"
-			echo "       Thanks you for Use Quick Menu Install "
-			echo " "
-			echo "       Tank you! Elizeu Marino."
-			echo " "
-			echo "______________________________________________________________________"
-			echo ;
-			# zenity --info --title "$TITULO" --text "Nenhum pacote foi escolhido. O script será encerrado, obrigado."
-
-
-		;;
-
+      echo "______________________________________________________________________"
+      echo " "
+      echo "       Mais já ta indo? Fica mais um pouco, "
+      echo "              Vai ter Bolo! \o/ "
+      echo "           Saindo... Bye... Tchau... :( "
+      echo " "
+      echo "       Obrigado por Utilizar o Quick Menu Install"
+      echo "       Thanks you for Use Quick Menu Install "
+      echo " "
+      echo "       Tank you! Elizeu Marino."
+      echo " "
+      echo "______________________________________________________________________"
+      echo ;
+    ;;
 
 		esac
-	}
+	} #Fim Funcao_Escolha
 menu
+#Fim do Quick Menu Master Install
