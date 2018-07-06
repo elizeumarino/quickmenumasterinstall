@@ -2,8 +2,7 @@
 #  ---------------------------------------------------------------------
 #      @Author:  Elizeu Marino
 #
-#                Rio de Janeiro    Cel: +55 21 ###-###-###
-#                Brasil            Tel: +55 21 ####-####
+#                Rio de Janeiro         Brazil            
 #                E-Mail: elizeumarino@gmail.com
 #                www.elizeulog.blogspot.com
 #                http://br.linkedin.com/in/elizeumarino
