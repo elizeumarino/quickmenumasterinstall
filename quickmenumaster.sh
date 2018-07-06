@@ -21,10 +21,7 @@
 #  ---------------------------------------------------------------------
 #Inicio Quick Menu Master Install
 clear #Inicio condicional if verica senha de admin
-if [ "`id -u`" != "0" ] ; then
-gksudo $0
-exit
-fi #Fim do condicional
+
 
 
 menu ()	{ #Inicio Menu
@@ -90,6 +87,7 @@ Funcao_Escolha
 			echo ;
 			COMANDO='sudo add-apt-repository -y ppa:webupd8team/java'; TITULO='..:: Instalando Repositorio ::..'; TEXTO=' Acidionando Repositorio...... Por favor aguarde...'
 			Funcao_Executar
+			COMANDO='echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections'
 			COMANDO='sudo apt-get -y update'; TITULO=' ..:: Atualizando Repositorios ::.. '; TEXTO=' Atualizando Repositorios...... Por favor aguarde...'
 			Funcao_Executar
 			COMANDO='sudo apt-get -y install oracle-java8-installer'; TITULO=' ..:: Instalando ::.. '; TEXTO=' Instalando Oracle-Java8...... Por favor aguarde...'
@@ -349,5 +347,11 @@ Funcao_Escolha
 
 		esac
 	} #Fim Funcao_Escolha
-menu
-
+	
+	if [ "`id -u`" != "0" ] ; then
+		# gksudo $0
+		zenity --info --width=400 --height=100 --title " ...::: OBRIGADO ! :::..." --text " Você deve executar esse programa como super usuario"
+		else
+	menu
+	exit
+fi #Fim do condicional
